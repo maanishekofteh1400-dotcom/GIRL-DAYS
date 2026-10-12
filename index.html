@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff0f6">
+  <title>برای قشنگترین دختر دنیا 🎀</title>
+  <style>
+    :root {
+      --pink: #ea548d;
+      --dark: #763b56;
+      --muted: #a16d83;
+      --border: #f7ccde;
+    }
+
+* { box-sizing: border-box; }
+
+body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      color: var(--dark);
+      font-family: Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 15% 10%, #ffd5e7, transparent 45%),
+        radial-gradient(ellipse at 90% 85%, #ffdcea, transparent 45%),
+        #fff5f9;
+      overflow-x: hidden;
+    }
+
+button { font: inherit; -webkit-tap-highlight-color: transparent; }
+
+button:focus-visible {
+      outline: 3px solid #bb3970;
+      outline-offset: 5px;
+    }
+
+.svg-library {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+.background-dots {
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(#e6a5c0 1px, transparent 1px);
+      background-size: 24px 24px;
+      opacity: .22;
+      pointer-events: none;
+    }
+
+#rain {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+.falling-kitty {
+      position: absolute;
+      top: -110px;
+      width: var(--size);
+      height: var(--size);
+      opacity: .4;
+      animation: fall var(--duration) linear var(--delay) infinite;
+      will-change: transform;
+    }
+
+@keyframes fall {
+      from { transform: translate3d(0, -100px, 0) rotate(-18deg); }
+      to { transform: translate3d(var(--drift), calc(100vh + 220px), 0) rotate(35deg); }
+    }
+
+main {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 38px 18px;
+    }
+
+.shell { width: min(100%, 580px); }
+
+.top-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+.card {
+      position: relative;
+      background: rgba(255, 255, 255, .92);
+      border: 1px solid white;
+      border-radius: 32px;
+      padding: 34px 26px;
+      text-align: center;
+      box-shadow: 0 24px 80px #b8497c18, 0 0 0 7px #ffffff55;
+      backdrop-filter: blur(12px);
+    }
+
+.ribbon {
+      position: absolute;
+      top: -21px;
+      left: 25px;
+      font-size: 38px;
+      transform: rotate(-14deg);
+    }
+
+.screen[hidden] { display: none; }
+
+.screen { animation: appear .45s ease both; }
+
+@keyframes appear {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+.kitty {
+      width: 150px;
+      height: 132px;
+      filter: drop-shadow(0 10px 12px #ed92b52b);
+    }
+
+.hero-kitty { animation: float 3.5s ease-in-out infinite; }
+
+@keyframes float {
+      50% { transform: translateY(-9px) rotate(3deg); }
+    }
+
+.eyebrow {
+      color: var(--pink);
+      font-size: 11px;
+      letter-spacing: 3px;
+      margin: 16px 0;
+    }
+
+h1, h2 {
+      font-size: clamp(23px, 5.5vw, 30px);
+      line-height: 1.7;
+      margin: 12px 0;
+      outline: none;
+    }
+
+.subtitle {
+      font-size: 14px;
+      line-height: 2;
+      color: var(--muted);
+      margin: 12px 0 24px;
+    }
+
+.button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 13px 27px;
+      border: 0;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #f578aa, #e34b86);
+      box-shadow: 0 8px 22px #e34b862b;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform .2s, box-shadow .2s;
+      line-height: 1.7;
+    }
+
+.button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 26px #e34b8640;
+    }
+
+.button:active { transform: scale(.97); }
+    .wide { width: 100%; }
+
+.letter {
+      text-align: right;
+      background: #fff8fb;
+      border: 1px solid #f9dfeb;
+      padding: 20px;
+      border-radius: 22px;
+      margin: 22px 0;
+      line-height: 2.35;
+      font-size: 15px;
+    }
+
+.letter p { margin: 0 0 17px; }
+    .letter p:last-child { margin-bottom: 0; }
+
+.choices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+.choice {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: #fff9fc;
+      color: var(--dark);
+      cursor: pointer;
+      min-height: 112px;
+      padding: 16px 10px;
+      line-height: 1.9;
+      transition: background .2s, transform .2s;
+    }
+
+.choice:hover { background: #ffebf4; transform: translateY(-3px); }
+    .choice-icon { display: block; font-size: 29px; margin-bottom: 5px; }
+    .choice.wrong { animation: shake .35s ease; border-color: #ee8cb0; }
+
+@keyframes shake {
+      25%, 75% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+    }
+
+.feedback {
+      min-height: 52px;
+      color: #c04d7b;
+      font-size: 14px;
+      line-height: 1.9;
+      margin: 17px 0 0;
+    }
+
+.big-emoji { font-size: 65px; margin: 15px 0; }
+    .answer-row { display: flex; justify-content: center; gap: 12px; margin-top: 25px; }
+
+.secondary {
+      background: #fff1f7;
+      color: #aa6684;
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+.final-message {
+      font-size: 19px;
+      line-height: 2.3;
+      margin: 20px 0;
+    }
+
+.tiny { color: var(--muted); font-size: 12px; line-height: 2; }
+
+.progress {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 25px 0 17px;
+    }
+
+.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 99px;
+      background: #ebc1d3;
+      transition: width .3s, background .3s;
+    }
+
+.dot.active { width: 24px; background: var(--pink); }
+    footer { text-align: center; font-size: 11px; color: var(--muted); }
+
+.celebration-heart {
+      position: fixed;
+      z-index: 5;
+      bottom: -50px;
+      pointer-events: none;
+      animation: rise 3s ease-out forwards;
+    }
+
+@keyframes rise {
+      to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+      }
+    }
+
+@media (max-width: 420px) {
+      .card { padding: 29px 18px; border-radius: 26px; }
+      .letter { padding: 16px; font-size: 14px; }
+      .choice { font-size: 13px; }
+    }
+
+@media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      #rain { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- تصویر کیتی داخل خود فایل است و اینترنت لازم ندارد. -->
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg"
+       aria-hidden="true">
+    <defs>
+      <symbol id="kitty-art" viewBox="0 0 160 135">
+        <path
+          d="M30 44 L28 13 Q30 6 38 11 L61 29
+             Q81 24 101 30 L124 11 Q133 7 133 18
+             L132 49 Q145 64 142 84
+             Q139 119 81 122 Q23 123 17 89
+             Q12 62 30 44Z"
+          fill="#fff" stroke="#553b46" stroke-width="3.5"
+          stroke-linejoin="round"/>
+        <path d="M34 34 L34 19 L49 31 M114 31 L127 19 L127 38"
+          fill="#ffd7e7"/>
+        <ellipse cx="57" cy="76" rx="4.5" ry="6" fill="#49343d"/>
+        <ellipse cx="105" cy="76" rx="4.5" ry="6" fill="#49343d"/>
+        <ellipse cx="81" cy="88" rx="7" ry="5"
+          fill="#ffd368" stroke="#553b46" stroke-width="2"/>
+        <ellipse cx="41" cy="91" rx="10" ry="5" fill="#ffe0ec"/>
+        <ellipse cx="119" cy="91" rx="10" ry="5" fill="#ffe0ec"/>
+        <g stroke="#553b46" stroke-width="3" stroke-linecap="round">
+          <path d="M29 73 L8 68 M28 84 L5 84 M31 95 L11 102"/>
+          <path d="M133 72 L152 66 M135 83 L156 83 M132 95 L152 102"/>
+        </g>
+        <g stroke="#c94278" stroke-width="2.5" stroke-linejoin="round">
+          <path d="M110 35 Q92 9 84 24 Q76 42 101 45Z" fill="#f66c9e"/>
+          <path d="M111 34 Q125 13 138 25 Q150 43 122 46Z" fill="#f66c9e"/>
+          <path d="M101 36 L94 29 M121 36 L131 29" fill="none"/>
+          <circle cx="112" cy="38" r="10" fill="#ff91b9"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+<div class="background-dots" aria-hidden="true"></div>
+  <div id="rain" aria-hidden="true"></div>
+
+<main>
+    <div class="shell">
+      <div class="top-note"></div>
+
+<div class="card">
+        <span class="ribbon" aria-hidden="true">🎀</span>
+
+<section class="screen" id="intro" aria-labelledby="intro-title">
+          <svg class="kitty hero-kitty" aria-hidden="true">
+            <use href="#kitty-art"></use>
+          </svg>
+          <p class="eyebrow">FOR MY FAVORITE GIRL</p>
+          <h1 id="intro-title" tabindex="-1">روزت مبارک دختر قشنگم</h1>
+          <p class="subtitle">
+            یه دنیای صورتی کوچولو ساختم برات…<br>
+          </p>
+          <button class="button wide" data-next="letter">ورود به دنیای ما 💗</button>
+          <p class="tiny">با عشق برای دختر قشنگم</p>
+        </section>
+
+<section class="screen" id="letter" hidden aria-labelledby="letter-title">
+          <svg class="kitty" aria-hidden="true">
+            <use href="#kitty-art"></use>
+          </svg>
+          <h2 id="letter-title" tabindex="-1">یه حرف از ته دلم… 💌</h2>
+
+<div class="letter">
+            <p>سلام قربونت برم خوبی اگه این پیامو میخونی میخواستم بدونی که واقعا بهترین دوست دختر و بهترین آدم جهانی</p>
+            <p>میخواستم بابت کاری که دیشب کردم ازت معذرت بخوام و بدونی که بی نهایت عاشقتم و دوست دارم و زندگیم واقعا بدون تو اصلا زندگی نمیشه</p>
+            <p>بدون همیشه هرجا باشی مواظبتمو پیشت</p>
+            <p>و یه سوپرایز کوچولووووو عین خودتتتت واست یچیز کوچولو و قشنگ خریدم که خودت باید حدث بزنی قشنگممم🥹🫀</p>
+            <p>بازم میخوام روز دخترو تبریک بگم بهت و بگم که تو بهترین آدم جهانی و مرسی که پیشمی و منو تحمل میکنی</p>
+            <p>عاشقتم جوجه🥲🫀</p>
+          </div>
+
+<button class="button wide" data-next="quiz">ورود به صفحهی بعد 🎁</button>
+        </section>
+
+<section class="screen" id="quiz" hidden aria-labelledby="quiz-title">
+          <div class="big-emoji" aria-hidden="true">🎁</div>
+          <p class="eyebrow">A LITTLE SURPRISE</p>
+          <h2 id="quiz-title" tabindex="-1">کادوتو حدث بزن</h2>
+          <p class="subtitle">ببینم میتونی سوپرایز کوچولوتو پیدا کنی؟ 🥹🎀</p>
+
+<div class="choices">
+            <button class="choice" data-gift="correct">
+              <span class="choice-icon" aria-hidden="true">👝</span>
+              کیف ارایش کیتی
+            </button>
+            <button class="choice" data-gift="wrong">
+              <span class="choice-icon" aria-hidden="true">🎧</span>
+              کیس ایرپاد کیتی
+            </button>
+            <button class="choice" data-gift="wrong">
+              <span class="choice-icon" aria-hidden="true">📔</span>
+              دفترچه ی کیتی
+            </button>
+            <button class="choice" data-gift="wrong">
+              <span class="choice-icon" aria-hidden="true">🎀</span>
+              برچسب کیتی
+            </button>
+          </div>
+          <p class="feedback" id="gift-feedback" role="status" aria-live="polite"></p>
+        </section>
+
+<section class="screen" id="gift" hidden aria-labelledby="gift-title">
+          <svg class="kitty hero-kitty" aria-hidden="true">
+            <use href="#kitty-art"></use>
+          </svg>
+          <div class="big-emoji" aria-hidden="true">👝✨</div>
+          <h2 id="gift-title" tabindex="-1">افرین دختررر قشنگم امیدوارم دوست داشته باشی</h2>
+          <p class="subtitle">یه کیف آرایش کیتی برای کوچولو دختر دنیا 🎀</p>
+          <button class="button wide" data-next="peace">ورود به صفحهی بعد 🫀</button>
+        </section>
+
+<section class="screen" id="peace" hidden aria-labelledby="peace-title">
+          <svg class="kitty hero-kitty" aria-hidden="true">
+            <use href="#kitty-art"></use>
+          </svg>
+          <div class="big-emoji" aria-hidden="true">🥺</div>
+          <h2 id="peace-title" tabindex="-1">؟با من اشتی میکنی بچهه</h2>
+
+<div class="answer-row">
+            <button class="button" data-next="final">اره 💗</button>
+            <button class="button secondary" id="no-button">نه</button>
+          </div>
+          <p class="feedback" id="peace-feedback" role="status" aria-live="polite"></p>
+        </section>
+
+<section class="screen" id="final" hidden aria-labelledby="final-title">
+          <svg class="kitty hero-kitty" aria-hidden="true">
+            <use href="#kitty-art"></use>
+          </svg>
+          <div class="big-emoji" aria-hidden="true">🥹💞</div>
+          <h2 id="final-title" tabindex="-1">ههه دیدی باهام اشتی میکنیییی</h2>
+          <p class="final-message">
+            دوست دارم قربونتتت برممم<br>
+            امشب قول میدم بمونم<br>
+            بدو بیا تلگرتم کوچولو
+          </p>
+          <p class="subtitle">روز دختر مبارک زندگیم🎀</p>
+        </section>
+      </div>
+
+<div class="progress" aria-hidden="true">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <footer>تو زندگیه منی ♡</footer>
+    </div>
+  </main>
+
+<script>
+    const pages = ["intro", "letter", "quiz", "gift", "peace", "final"];
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let rainStarted = false;
+
+function startRain() {
+      if (rainStarted || reducedMotion.matches) return;
+      rainStarted = true;
+
+const container = document.getElementById("rain");
+      const namespace = "http://www.w3.org/2000/svg";
+
+for (let i = 0; i < 22; i++) {
+        const kitty = document.createElementNS(namespace, "svg");
+        const use = document.createElementNS(namespace, "use");
+
+use.setAttribute("href", "#kitty-art");
+        kitty.appendChild(use);
+        kitty.classList.add("falling-kitty");
+        kitty.style.left = `${Math.random() * 100}%`;
+        kitty.style.setProperty("--size", `${30 + Math.random() * 33}px`);
+        kitty.style.setProperty("--duration", `${10 + Math.random() * 12}s`);
+        kitty.style.setProperty("--delay", `${-Math.random() * 24}s`);
+        kitty.style.setProperty("--drift", `${Math.random() * 100 - 50}px`);
+        container.appendChild(kitty);
+      }
+    }
+
+function celebrate() {
+      if (reducedMotion.matches) return;
+
+for (let i = 0; i < 24; i++) {
+        setTimeout(() => {
+          const heart = document.createElement("span");
+          heart.className = "celebration-heart";
+          heart.setAttribute("aria-hidden", "true");
+          heart.textContent = ["💗", "🎀", "💕", "✨"][i % 4];
+          heart.style.left = `${Math.random() * 96}%`;
+          heart.style.fontSize = `${20 + Math.random() * 23}px`;
+          document.body.appendChild(heart);
+          setTimeout(() => heart.remove(), 3200);
+        }, i * 65);
+      }
+    }
+
+function showPage(id) {
+      if (!pages.includes(id)) return;
+
+document.querySelectorAll(".screen").forEach(screen => {
+        screen.hidden = screen.id !== id;
+      });
+
+document.querySelectorAll(".dot").forEach((dot, index) => {
+        dot.classList.toggle("active", index === pages.indexOf(id));
+      });
+
+if (id !== "intro") startRain();
+      window.scrollTo({ top: 0, behavior: "instant" });
+
+const heading = document.querySelector(`#${id} h1, #${id} h2`);
+      heading.focus({ preventScroll: true });
+
+if (id === "gift" || id === "final") celebrate();
+    }
+
+document.querySelectorAll("[data-next]").forEach(button => {
+      button.addEventListener("click", () => showPage(button.dataset.next));
+    });
+
+let wrongGuesses = 0;
+    const giftMessages = [
+      "اشتباهه قشنگممم یه بار دیگه حدث بزن!",
+      "نههه این نیست جوجه دوباره امتحان کن!",
+      "اشتباهه کوچولو یه گزینهی دیگه رو بزن!"
+    ];
+
+document.querySelectorAll("[data-gift]").forEach(button => {
+      button.addEventListener("click", () => {
+        if (button.dataset.gift === "correct") {
+          showPage("gift");
+          return;
+        }
+
+document.getElementById("gift-feedback").textContent =
+          giftMessages[wrongGuesses++ % giftMessages.length];
+
+button.classList.remove("wrong");
+        void button.offsetWidth;
+        button.classList.add("wrong");
+      });
+    });
+
+let noCount = 0;
+    const noMessages = [
+      "نههه جواب درست این نیست بچهه 🥺💗",
+      "دوباره امتحان کن قشنگم،   ",
+      "اینم جواب درست نبود جوجه 🥹🫀",
+      
+    ];
+
+document.getElementById("no-button").addEventListener("click", () => {
+      document.getElementById("peace-feedback").textContent =
+        noMessages[noCount++ % noMessages.length];
+    });
+  </script>
+</body>
+</html>
